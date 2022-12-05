@@ -1,12 +1,8 @@
-172.31.39.234
-172.31.33.23
-172.31.33.217
+172.31.39.234 ansible_user=devops ansible_ssh_pass=today@1234
+172.31.33.23 ansible_user=devops ansible_ssh_pass=today@1234
+172.31.33.217 ansible_user=devops ansible_ssh_pass=today@1234
 
 [local]
 localhost ansible_python_interpreter="/usr/bin/python2.7.18"
 
-[all:vars]
-ansible_connection=ssh
-ansible_user=devops
-ansible_ssh_pass=today@1234
 
