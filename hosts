@@ -1,0 +1,6 @@
+172.31.39.234
+172.31.33.23
+172.31.33.217
+
+[local]
+localhost ansible_python_interpreter="/usr/bin/python2.7.18"
