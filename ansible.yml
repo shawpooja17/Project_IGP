@@ -1,20 +1,11 @@
 - hosts: localhost
   become: yes
-  tasks:  
-        - name: start a container
-          community.docker.docker_container:
-             name: abcApp
-             image: poojashaw/tomcatwebserver
-             state: started
-             ports:
-                 - 1234:8080
-             #restart: true
-          register: out
-        - debug:
-              var: out
-             #- name: Deploying to kubernetes
-        - name: Create a Deployment
-          command: "kubectl --kubeconfig=/etc/kubernetes/admin.conf apply -f https://github.com/shawpooja17/Project_IGP/blob/main/deployment.yml"    
-          register: out
-        - debug:
-              var: out
+  tasks:
+  - name: copy deployment file to kubernetes master 
+    copy:
+      src: https://github.com/shawpooja17/Project_IGP/blob/main/deployment.yml
+      dest: /root/
+  - name: Create a Deployment by reading the definition from a local file
+    command: kubectl apply -f /root/deployment.yaml
+    
+   
