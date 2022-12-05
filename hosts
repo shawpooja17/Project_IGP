@@ -4,3 +4,9 @@
 
 [local]
 localhost ansible_python_interpreter="/usr/bin/python2.7.18"
+
+[all:vars]
+ansible_connection=ssh
+ansible_user=devops
+ansible_ssh_pass=today@1234
+
