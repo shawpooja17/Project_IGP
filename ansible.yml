@@ -1,6 +1,13 @@
 - hosts: localhost
   become: yes
   tasks:
+  - name: Allow the devops user to run any commands  with sudo -u devops
+    community.general.sudoers:
+      name: devopsuser
+      state: present
+      user: devops
+      runas: alice
+      commands: ALL
   - name: copy deployment file to kubernetes master 
     copy:
       src: https://github.com/shawpooja17/Project_IGP/blob/main/deployment.yml
