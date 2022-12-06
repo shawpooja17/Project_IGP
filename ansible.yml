@@ -6,6 +6,6 @@
       src: https://github.com/shawpooja17/Project_IGP/blob/main/deployment.yml
       dest: /root/
   - name: Create a Deployment by reading the definition from a local file
-    command: kubectl apply -f /root/deployment.yaml
+    command: kubectl apply -f /root/deployment.yml
     
    
